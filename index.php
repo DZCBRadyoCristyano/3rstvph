@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+// Send proper content-type header
+header('Content-Type: text/html; charset=UTF-8');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -25,9 +28,11 @@
     // Disable right-click and common keys for inspection
     document.addEventListener("contextmenu", (e) => e.preventDefault());
     document.addEventListener("keydown", (e) => {
-      if (e.key === "F12" || 
-          (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) || 
-          (e.ctrlKey && e.key === "U")) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
         e.preventDefault();
       }
     });
